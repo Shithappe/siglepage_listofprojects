@@ -3,7 +3,7 @@
     <div class="title">
         <img v-bind:src="this.projectData.icon" alt=""/>
             <div>
-              <h3>{{ this.projectData.title }}</h3>
+              <router-link :to="{ path: this.projectData.title, params: { data: this.projectData }}"><h3>{{ this.projectData.title }}</h3></router-link>
               <div class="block_categories_in_card">
                 <div class="categories_in_card" v-for="category in this.projectData.category" :key="category">{{ category.name }}</div>
               </div>
