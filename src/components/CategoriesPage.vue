@@ -11,7 +11,7 @@
         <a target="_blank" href="https://twitter.com/SuiEcosystem"><img src="../assets/twitter.png" alt=""/></a>
         <a target="_blank" href="#"><img src="../assets/discord.png" alt=""/></a>
     </div>
-    <button class="btn_submit" onclick="location.href = `https://suiecosystem.top/submit-sui-project/`">Submit</button>
+    <button class="btn_submit" onclick="location.href = `https://old.suiecosystem.top/submit-sui-project/`">Submit</button>
     </div>
   </div>
 

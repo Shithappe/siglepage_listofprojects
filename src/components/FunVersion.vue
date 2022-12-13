@@ -26,7 +26,7 @@
         <a target="_blank" href="https://twitter.com/SuiEcosystem"><img src="../assets/twitter.png" alt=""/></a>
         <a target="_blank" href="#"><img src="../assets/2308078_discord_logo_icon.png" alt=""/></a>
     </div>
-    <button class="fun_btn_submit" onclick="location.href = `https://suiecosystem.top/submit-sui-project/`">Submit</button>
+    <button class="fun_btn_submit" onclick="location.href = `https://old.suiecosystem.top/submit-sui-project/`">Submit</button>
     </div>
   </div>
   <div class="main">

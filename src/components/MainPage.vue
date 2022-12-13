@@ -12,7 +12,7 @@
         <a target="_blank" href="https://twitter.com/SuiEcosystem"><img src="../assets/twitter.png" alt=""/></a>
         <a target="_blank" href="#"><img src="../assets/discord.png" alt=""/></a>
     </div>
-    <button class="btn_submit" onclick="location.href = `https://suiecosystem.top/submit-sui-project/`">Submit</button>
+    <button class="btn_submit" onclick="location.href = `https://old.suiecosystem.top/submit-sui-project/`">Submit</button>
     </div>
   </div>
   
@@ -22,7 +22,7 @@
     </div>
     <div class="projects">
       <ul class="ul_in_main">
-        <ProjectCard class="project_mp" v-for="project in this.projects" :key="project.id" :projectData="project"/>
+        <ProjectCard class="project_mp" v-for="(project, index) in this.projects" :key="project.id" :projectData="project" :index="index"/>
       </ul>
     </div>
     <button v-show="this.showScrollBtn" onclick="window.scrollTo(0, 0)" class="scrollToTop"><img src="../assets/double-arrow-top-icon.png" alt=""></button>

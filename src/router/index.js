@@ -11,8 +11,8 @@ const routes = [
     component: Main
   },
   {
-    path: '/:name',
-    name: 'ProjectPage',
+    path: '/:name/',
+    name: '/ProjectPage',
     component: ProjectPage
   },
   {
