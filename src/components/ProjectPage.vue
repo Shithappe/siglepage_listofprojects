@@ -1,10 +1,12 @@
 <template>
-   <div class="nav">
-    <div class="h" @click="$router.push('/')">
+  <div>
+
+    <div class="nav">
+      <div class="h" @click="$router.push('/')">
       <div class="blue">Sui</div>
       ecosystem</div>
-    <div class="right">
-      <button class="btn_fun" @click="$router.push('/fun')">Fun</button>
+      <div class="right">
+        <button class="btn_fun" @click="$router.push('/fun')">Fun</button>
       <button class="btn_submit" @click="$router.push('/overview')">Overview</button>
       <div class="social_media">
         <a target="_blank" href="https://suiecosystem.top"><img src="../assets/safari.png" alt=""/></a>
@@ -14,27 +16,29 @@
     <button class="btn_submit" onclick="location.href = `https://old.suiecosystem.top/submit-sui-project/`">Submit</button>
     </div>
   </div>
-
+  
   <div class="main">
     <div class="main_t">
-      <img :src=this.data.icon alt="">
-    <div class="title">
+      <img class="icon" :src=this.data.icon alt="">
+      <div class="title">
       <h2>{{this.data.title}}</h2>
       <p>{{this.data.excerpt}}</p>
+      <p>{{ this.data.content }}</p>
     </div>
-
-    </div>
+    
+  </div>
       <div class="categories" v-for="category in this.data.category" :key=category>
         <span>{{category.name}}</span>
       </div>
 
       <div class="project_social_media">
-            <a target="_blank" v-if="this.data.website" v-bind:href="this.data.website"><img src="../assets/safari.png" alt=""/></a>
-            <a target="_blank" v-if="this.data.twitter" v-bind:href="this.data.twitter"><img src="../assets/twitter.png" alt=""/></a>
-            <a target="_blank" v-if="this.data.discord" v-bind:href="this.data.discord"><img src="../assets/discord.png" alt=""/></a>
-          </div>
+        <a target="_blank" v-if="this.data.website" v-bind:href="this.data.website"><img src="../assets/safari.png" alt=""/></a>
+        <a target="_blank" v-if="this.data.twitter" v-bind:href="this.data.twitter"><img src="../assets/twitter.png" alt=""/></a>
+        <a target="_blank" v-if="this.data.discord" v-bind:href="this.data.discord"><img src="../assets/discord.png" alt=""/></a>
+      </div>
+    </div>
   </div>
-</template>
+  </template>
 
 <script>
 import axios from 'axios';
@@ -59,13 +63,13 @@ export default {
   },
   mounted() {
     const urlParams = new URLSearchParams(window.location.search);
-    const index = Number(urlParams.get('index')) + 1;
-    console.log(index);
+    // const index = Number(urlParams.get('index')) + 1;
+    // console.log(index);
     axios
-            .get(process.env.VUE_APP_BASE_API_URL + `all/${index}/1`)
+            .get(`https://old.suiecosystem.top/wp-json/api/get_custom_by_id/${urlParams.get('id')}`)
             .then((response) => {
-              this.data = response.data[0];
-              console.log(this.data);
+              this.data = response.data;
+              // console.log(this.data);
             });
         } 
 }
@@ -87,6 +91,9 @@ img{
 .main_t{
   display: flex;
   flex-direction: row;
+}
+.icon{
+  height: 180px;
 }
 .title{
   display: flex;

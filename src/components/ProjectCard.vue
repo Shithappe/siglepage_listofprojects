@@ -3,7 +3,7 @@
     <div class="title">
         <img v-bind:src="this.projectData.icon" alt=""/>
             <div>
-              <router-link :to="{ path: this.projectData.title, query: {index: this.index} }"><h3>{{ this.projectData.title }}</h3></router-link>
+              <router-link :to="{ path: this.projectData.title, query: {id: this.projectData.id} }"><h3>{{ this.projectData.title }}</h3></router-link>
               <div class="block_categories_in_card">
                 <div class="categories_in_card" v-for="category in this.projectData.category" :key="category">{{ category.name }}</div>
               </div>
@@ -29,7 +29,7 @@ export default {
     },
     mounted() {
         // this.data = this.projectData;
-        // console.log(this.data);
+        // console.log(this.projectData);
     }
 }
 </script>
